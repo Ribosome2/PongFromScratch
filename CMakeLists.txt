@@ -1,8 +1,15 @@
 cmake_minimum_required(VERSION 3.21)
 PROJECT(PongFromScratch)
 
+
+set(CMAKE_CXX_STANDARD 17)
+
 FIND_PACKAGE(Vulkan REQUIRED)
+
 INCLUDE_DIRECTORIES(${VULKAN_SDK}/Include)
-ADD_EXECUTABLE(${PROJECT_NAME} src/main.cpp)
+INCLUDE_DIRECTORIES(src)
+
+
+ADD_EXECUTABLE(${PROJECT_NAME} src/platform/win32_platform.cpp)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} PRIVATE Vulkan::Vulkan)
