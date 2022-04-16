@@ -1,0 +1,6 @@
+﻿cmake-build-debug
+.idea
+*.exe
+main.*
+win32_platform.*
+win32_platform.*
