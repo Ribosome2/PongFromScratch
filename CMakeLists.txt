@@ -3,6 +3,9 @@ PROJECT(PongFromScratch)
 
 FIND_PACKAGE(Vulkan REQUIRED)
 INCLUDE_DIRECTORIES(${VULKAN_SDK}/Include)
-ADD_EXECUTABLE(${PROJECT_NAME} src/main.cpp)
+INCLUDE_DIRECTORIES(src)
+ADD_EXECUTABLE(${PROJECT_NAME}
+        src/platform/win32_platform.cpp
+        )
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} PRIVATE Vulkan::Vulkan)
